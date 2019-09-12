@@ -156,20 +156,17 @@ void DeleteNode(node ** list,uint8 position)
 	for(i=0;i<position-1;i++){
 		if(current->next == NULL)
 		{
-			printf("5\n");
 			flag = -1;
 			return;
 		}
 		else
 		{
-			printf("2\n");
 			current = current->next;
 		}
 	}
 
 	if(flag == 1)
 	{
-		printf("1\n");
 		/* saving pointer to free it */
 		DeleteNode = current->next;
 
@@ -180,25 +177,7 @@ void DeleteNode(node ** list,uint8 position)
 		free(DeleteNode);
 	}
 }
-//	node *DeleteNode;
-//	node *PreNode=*list;
-//	if(Max_position>=position)
-//	{
-//		for(uint8 i=;i<(position-1);i++)
-//		{
-//
-//			PreNode->next=PreNode->next->next;
-//		}
-//		DeleteNode=PreNode->next;
-//		PreNode->next=PreNode->next->next;
-//		free(DeleteNode);
-//		printf("Node is Deleted\n");
-//	}
-//	else
-//	{
-//		printf("Node is not Found\n");
-//	}
-//}
+
 //	node *Delete_Node = NULL;
 //	node *prev = *list;
 //	node *current = prev->next;
@@ -263,4 +242,37 @@ void ListSize(node** list)
 	printf("List size : %d\n", size);
 }
 
+/*******************************************************************************
+ * Function Name:	ReverseList
+ *
+ * Description: 	Reverse the Linked List
+ *
+ * Inputs:			*pointer to pointer to struct "Head of Linked List"
+ *
+ * Return:		    NULL
+ *******************************************************************************/
+void ReverseList(node** list)
+{
+	node * current = *list;
+	node * prev = NULL;
+	node * Next = NULL;
 
+	if(*list==NULL)
+	{
+		printf("Linked List is empty");
+		return;
+	}
+	else
+	{
+		while(current != NULL)
+		{
+			Next=current->next;
+			current->next=prev;
+			prev=current;
+			current=Next;
+		}
+		*list=prev;
+	}
+
+
+}

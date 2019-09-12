@@ -26,11 +26,10 @@ int main(void)
 	InsertToList(ptr,45,2);
 
 	PrintList(ptr);
-
-	DeleteNode(ptr,3);
-
+	ReverseList(ptr);
 	PrintList(ptr);
-
+	DeleteNode(ptr,3);
+	PrintList(ptr);
 	SearchNode(ptr,35);
 	SearchNode(ptr,40);
 	ListSize(ptr);
@@ -38,7 +37,7 @@ int main(void)
 	ListSize(ptr);
 	PrintList(ptr);
 	DeleteList(ptr);
-	PrintList(ptr);
+
 
 	return 0;
 }

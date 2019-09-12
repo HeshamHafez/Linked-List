@@ -122,5 +122,14 @@ void SearchNode(node** list, uint32 data);
  *******************************************************************************/
 void ListSize(node** list);
 
-
+/*******************************************************************************
+ * Function Name:	ReverseList
+ *
+ * Description: 	Reverse the Linked List
+ *
+ * Inputs:			*pointer to pointer to struct "Head of Linked List"
+ *
+ * Return:		    NULL
+ *******************************************************************************/
+void ReverseList(node** list);
 #endif /* LINKED_H_ */
